@@ -6,7 +6,7 @@ use App\Models\User;
 // use Illuminate\Database\Console\Seeds\WithoutModelEvents;
 use Illuminate\Database\Seeder;
 
-class DatabaseSeeder extends Seeder
+class CompaniesSeeder extends Seeder
 {
     /**
      * Seed the application's database.
@@ -15,14 +15,11 @@ class DatabaseSeeder extends Seeder
     {
         // User::factory(10)->create();
 
-        User::factory()->create([
-            'name' => 'Test User',
-            'email' => 'test@example.com',
+        DB::table('companies')->insert([
+            ['name' => 'PT. XYZ'],
+            ['name' => 'PT. XYZ-1'],
+            ['name' => 'PT. XYZ-2'],
         ]);
-
-        $this->call([
-            RolesSeeder::class,
-            CompaniesSeeder::class,
-        ]);
+        
     }
 }
